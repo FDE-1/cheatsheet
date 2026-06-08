@@ -8,7 +8,7 @@ DEBUG: {{ site.collections | size }} collections trouvées
 - nom = "{{ col.label }}" / nb docs = {{ col.docs | size }}
 {% endfor %}
 ## Leetcode-Patterns
-{% for page in site.collections['_algos'].docs %}
+{% for page in site.algos.docs %}
   {% if page.url != '/index.html' and page.url != 'readme.html' and page.title%}
   - [{{ page.title }}]({{ page.url | relative_url }})
   {% endif %}
