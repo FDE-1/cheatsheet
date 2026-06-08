@@ -3,6 +3,10 @@ title: Cheatsheet Python
 layout: default
 ---
 
+DEBUG: {{ site.collections | size }} collections trouvées
+{% for col in site.collections %}
+- nom = "{{ col.label }}" / nb docs = {{ col.docs | size }}
+{% endfor %}
 ## Leetcode-Patterns
 {% for page in site.collections['leetcode-patterns'].docs %}
   {% if page.url != '/index.html' and page.url != 'readme.html' and page.title%}
