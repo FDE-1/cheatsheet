@@ -4,7 +4,7 @@ description: cheatsheet of
 baseurl: /cheatsheet
 
 collections:
-  leetcode-patterns:
+  algos:
     output: true
   structures:
     output: true
