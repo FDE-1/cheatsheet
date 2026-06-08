@@ -2,11 +2,14 @@
 title: Mapping
 layout: default
 ---
+
+# Dict
+```python
 from collections import Counter, defaultdict, deque, OrderedDict
 
-# ==========================================
+# =========================================
 # 1. Standard Dictionary (dict)
-# ==========================================
+# =========================================
 d = {}
 
 d["key"] = "value"       # -> O(1) average, O(N) worst case (Insertion)
@@ -20,8 +23,10 @@ val = d.pop("key")       # -> O(1) average (Pop and return)
 # -> O(N) to iterate through all items
 for k, v in d.items(): 
     pass
+```
 
-
+# defaultdict
+```python
 # ==========================================
 # 2. Default Dictionary (defaultdict)
 # ==========================================
@@ -31,8 +36,11 @@ dd = defaultdict(int)
 dd["new_key"] += 1       # -> O(1) average (Auto-initializes to 0, then adds 1)
 dd["missing_key"]        # -> O(1) average (Auto-initializes to 0 and returns it)
 dd.get("missing_key")    # -> O(1) average (Safe lookup, DOES NOT auto-initialize)
+```
 
+# Counter
 
+```python
 # ==========================================
 # 3. Counter
 # ==========================================
@@ -45,8 +53,10 @@ c["z"]                   # -> O(1) average (Returns 0 for missing keys)
 # K is the number of elements requested, N is total unique elements
 c.most_common(2)         # -> O(N log K) (Returns list of top K most common elements)
 c.update(['b', 'c'])     # -> O(M) where M is the size of the new batch
+```
 
-
+# deque
+```python
 # ==========================================
 # 4. Double-Ended Queue (deque)
 # ==========================================
@@ -63,8 +73,10 @@ dq[-1]                   # -> O(1) (Peek right)
 dq[5]                    # -> O(N) (Random access in the middle is SLOW)
 
 dq.rotate(1)             # -> O(K) where K is the number of steps rotated
+```
 
-
+# OrderedDict
+```python
 # ==========================================
 # 5. OrderedDict
 # ==========================================
@@ -78,3 +90,4 @@ od.move_to_end("b", last=False)  # -> O(1) (Moves key to the left/beginning)
 
 last_item = od.popitem()         # -> O(1) (Pops rightmost / LIFO)
 first_item = od.popitem(last=False) # -> O(1) (Pops leftmost / FIFO)
+```
