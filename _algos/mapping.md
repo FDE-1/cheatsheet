@@ -1,3 +1,7 @@
+---
+title: Mapping
+layout: default
+---
 from collections import Counter, defaultdict, deque, OrderedDict
 
 # ==========================================
